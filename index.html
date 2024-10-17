@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>Who is the greatest boxer in the history of the sport?</h3>
+                 <button id="Ali">Muhammad Ali</button>
+                 <button id="Tyson">Mike Tyson</button>
+                 <button id="Jake">Jake Paul</button>
+                 <p id="message" style="font-family: 'Roboto', sans-serif; font-size: 28px"></p>
+                 <script>
+                    let aliButton = document.querySelector('#Ali');
+                    let tysonButton = document.querySelector('#Tyson');
+                    let jakeButton = document.querySelector('#Jake');
+                    let message = document.querySelector('#message');
+
+                    document.querySelector('#Ali').addEventListener('click', function(){
+                        aliButton.style.backgroundColor = '#6dffa5';
+                        tysonButton.style.backgroundColor = '#d9edff';
+                        jakeButton.style.backgroundColor = '#d9edff'
+                        message.textContent = 'Correct';
+                        message.style.color = '#6dffa5';
+                    })
+                    document.querySelector('#Tyson').addEventListener('click', function(){
+                        tysonButton.style.backgroundColor = '#ff8686';
+                        aliButton.style.backgroundColor = '#d9edff';
+                        jakeButton.style.backgroundColor = '#d9edff';
+                        message.textContent = 'Incorrect';
+                        message.style.color = '#ff8686';
+                    })
+                    document.querySelector('#Jake').addEventListener('click', function(){
+                        jakeButton.style.backgroundColor = '#ff8686';
+                        tysonButton.style.backgroundColor = '#d9edff';
+                        aliButton.style.backgroundColor = '#d9edff';
+                        message.textContent = 'Incorrect';
+                        message.style.color = '#ff8686';
+                    })
+
+                 </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>What color is spongebob?</h3>
+                <form>
+                    <input id = "userInput" class="input-box" autocomplete="off">
+                    <button type='button' id = "checkAnswer">Check Answer</button>
+                    <p id = "responceMessage" style="font-family: 'Roboto', sans-serif; font-size: 28px"></p>
+                    <script>
+                        let responceMessage = document.querySelector('#responceMessage');
+                        let checkAnswer = document.querySelector('#checkAnswer');
+                        let userInput = document.querySelector('#userInput');
+
+                        document.querySelector('#checkAnswer').addEventListener('click', function() {
+                            if (userInput.value.toLowerCase() === "yellow"){
+                                userInput.style.background = '#6dffa5';
+                                responceMessage.textContent = "Correct";
+                                responceMessage.style.color = '#6dffa5';
+                            }else{
+                                userInput.style.background = '#ff8686';
+                                responceMessage.textContent = "Incorrect";
+                                responceMessage.style.color = '#ff8686';
+                            }
+                        })
+
+                    </script>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
